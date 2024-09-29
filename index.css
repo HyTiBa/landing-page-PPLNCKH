@@ -211,3 +211,282 @@ main img {
     aspect-ratio: 2/1.5;
     object-fit: cover;
 }
+
+/* 
+==========================================
+    SMALL-LAPTOP USER
+==========================================
+*/
+
+@media only screen and (max-width: 1024px) {
+    /* NAVBAR */
+    .NavBar {
+        transition: 0.1s ease;
+        height: 2em;
+    }
+
+    /* LOGO */
+    .NavBar .logo-container img {
+        width: auto;
+        height: 65px;
+        cursor: pointer;
+    }
+    
+    /* NAVBAR LIST ITEM */
+    .NavBar .item-container ul a {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+        justify-content: flex-start;
+        font-size: 1em;
+        padding: 1em;
+        transition: 0.1s ease;
+    }
+}
+
+/* 
+==========================================
+    TABLET USER
+==========================================
+*/
+@media only screen and (max-width: 768px) {
+    /* NAVBAR */
+    .NavBar {
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.5em 4vw;
+        width: 93vw;
+    }
+
+    /* Hide List Item Content */
+    /* .NavBar .item-container ul li {
+        display: block;
+    } */
+}
+
+/* Show Hamburger Button */
+@media screen and (max-width: 768px) {
+    .NavBar .item-container .openBtn {
+        display: block;
+        cursor: pointer;
+        padding: 0.5em;
+    }
+    
+    .line {
+        display: block;
+        background-color: black;
+        width: 35px;
+        height: 3px;
+        padding: 0;
+        margin: 6px 0;
+    }
+}
+
+/* Hide Hamburger Button */
+@media screen and (min-width: 769px) {
+    .NavBar .item-container ul li:nth-child(1) {
+        display: none;
+    }
+
+    /* Reset original size */
+    .NavBar .item-container .sideNav {
+        width: auto !important;
+    }
+}
+
+/* SideNav Style */
+@media screen and (max-width: 768px) {
+    .sideNav {
+        display: block !important;
+        height: 91vh;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        background-color:rgb(246, 205, 183);
+        overflow-x: hidden;
+        padding-top: 5em;
+        transition: 0.3s;
+        border-radius: 80px 0 0 80px;
+    }
+
+    .sideNav .closeBtn {
+        width: min-content;
+        position: absolute;
+        top: 1.5em;
+        right: 2em;
+    }
+
+    .sideNav .closeBtn a {
+        padding: 0 !important;
+    }
+
+    .NavBar .item-container ul a{
+        padding: 1.5em 2em;
+    }
+}
+
+/* 
+==========================================
+    MOBILE L USER
+==========================================
+*/
+
+@media only screen and (max-width: 425px) {
+    /* NavBar */
+    .NavBar {
+        padding: 1em 4vw
+    }
+    
+    /* LOGO */
+    .NavBar .logo-container img {
+        height: 45px;
+    }
+}
+
+
+/*
+========================================== 
+UTILITY
+==========================================
+*/
+ 
+* {
+    font-family: 'Verdana', Tahoma, sans-serif;
+}
+
+html {
+    width: auto;
+    padding: 0;
+    margin: 0;
+}
+
+
+body{
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+/*
+==========================================
+NAVIGATION BAR
+==========================================
+*/
+.NavBar {
+    box-sizing: content-box;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 3em;
+    width: 100vw;
+    gap: 16px;
+    padding: 1.5em 5vw;
+    background-color: rgb(81, 138, 175);
+    z-index: 9999;
+}
+
+.nav-show {
+    top: 0;
+    transition: top 0.3s linear;
+}
+
+.nav-hide {
+    top : -100%;
+    transition: top 0.3s linear;
+}
+/*
+==========================================
+LOGO CONTAINER
+==========================================
+*/
+/* CONTAINER */
+.NavBar .logo-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+
+/* IMAGE */
+.NavBar .logo-container img {
+    width: auto;
+    height: 85px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.1s ease;
+    /* border: 2px solid black; */
+}
+
+/* 
+==========================================
+LIST ITEM 
+==========================================
+*/
+.NavBar ul {
+    display: flex;
+    gap: 16px;
+    
+}
+
+.NavBar ul a {
+    transition: 0.1s ease;
+    display: block;
+    gap: 6px;
+    align-items: center;
+    justify-content: right;
+    color: black;
+    padding: 1em;
+    font-weight: 800;
+    font-size: 1.5em;
+    border-radius: 5%;
+}
+
+.item-container{
+    margin-left: 1025px;
+}
+
+/* HOVER */
+.NavBar ul a:hover {
+    background-color: rgb(81, 127, 149);
+    color: rgb(255, 255, 255);
+    border-radius: 6px;
+    transition: 0.2s ease;
+}
+
+.scrollbar {
+    overflow-y: scroll; /* Hiển thị thanh cuộn dọc */
+    max-height: 100vh;
+    /* z-index: 99999; */
+    transition: transform 0.2s ease;
+  }
+  
+  /* Hiển thị thanh cuộn chỉ khi cuộn trang */
+  .scrollbar::-webkit-scrollbar {
+    width: 5px;
+    height: 10px;
+    background-color: transparent;
+  }
+  
+  /* Tùy chỉnh màu sắc và hình dạng của thumb */
+  .scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgb(0, 0, 0);
+    border-radius: 5px;
+  }
+  
+  /* Tùy chỉnh màu nền của thanh cuộn */
+  .scrollbar::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  
